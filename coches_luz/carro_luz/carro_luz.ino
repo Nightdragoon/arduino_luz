@@ -1,8 +1,10 @@
 
 int ledpin = 13;
 int inPin = 7;
-int val = 5;
+bool val = false;
 int secondVal = 9;
+
+
 
 void setup() {
   // put your setup code here, to run once:
@@ -14,15 +16,22 @@ void setup() {
 
 void loop() {
   secondVal = digitalRead(inPin);
-
+  Serial.print("valor de entrada:");
   Serial.println(secondVal);
-  if(secondVal == HIGH){
-    val = 7;
-  }else{
-    val = 5;
+  Serial.print("valor de booleano:");
+  Serial.println(val);
+  if(secondVal == HIGH && val == true){
+    val = false;
+    Serial.println("funcion funcion desactivada");
+    delay(300);
+  }
+  if(secondVal == HIGH && val == false){
+    val = true;
+    Serial.println("funcion acrtivda");
+    delay(300);
   }
 
-  if(val == 7){
+  if(val){
     for(int i = 0; i < 3; i++){
     digitalWrite(ledpin , HIGH);
     delay(500);
@@ -31,8 +40,6 @@ void loop() {
   }
 
   delay(3000);
-  }else{
-    digitalWrite(ledpin, LOW);
   }
 
 }
