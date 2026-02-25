@@ -3,6 +3,7 @@ int ledpin = 13;
 int inPin = 7;
 bool val = false;
 int secondVal = 9;
+int tiempo = 0;
 
 
 
@@ -34,12 +35,13 @@ void loop() {
   if(val){
     for(int i = 0; i < 3; i++){
     digitalWrite(ledpin , HIGH);
-    delay(500);
+    delay(500 + tiempo);
     digitalWrite(ledpin, LOW);
-    delay(500);
+    delay(500 + tiempo);
   }
 
   delay(3000);
+  tiempo + 100;
   }
 
 }

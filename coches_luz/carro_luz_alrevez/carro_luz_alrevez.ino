@@ -1,5 +1,6 @@
 int ledPin = 13;
 int buttonPin = 7;
+int tiempo = 0;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
@@ -15,11 +16,11 @@ void loop() {
   if (buttonState == HIGH) {
 
     
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 10; i++) {
       digitalWrite(ledPin, HIGH);
-      delay(300);
+      delay(300 + tiempo);
       digitalWrite(ledPin, LOW);
-      delay(300);
+      delay(300+ tiempo);
     }
 
     
@@ -29,9 +30,16 @@ void loop() {
     
     digitalWrite(ledPin, LOW);
     delay(3000);
+     for (int i = 0; i < 10; i++) {
+      digitalWrite(ledPin, HIGH);
+      delay(300 + tiempo);
+      digitalWrite(ledPin, LOW);
+      delay(300+ tiempo);
+    }
 
   } else {
     
     digitalWrite(ledPin, LOW);
   }
+  tiempo + 100;
 }
