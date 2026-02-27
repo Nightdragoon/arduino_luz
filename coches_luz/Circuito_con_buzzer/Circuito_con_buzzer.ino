@@ -119,6 +119,29 @@ void setup() {
 
 void loop() {
 
+  
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(leds[i], HIGH); 
+    tone(buzzer, notas[i]);      
+    delay(duracion);
+
+    digitalWrite(leds[i], LOW);  
+    noTone(buzzer);              
+    delay(100);
+  }
+
+  
+  for (int i = 4; i >= 0; i--) {
+    digitalWrite(leds[i], HIGH);
+    tone(buzzer, notas[i]);
+    delay(duracion);
+
+    digitalWrite(leds[i], LOW);
+    noTone(buzzer);
+    delay(100);
+  }
+
+  
     tone(buzzer,NOTE_D4,125);//D4
     delay(125);
     tone(buzzer,NOTE_D4,125);//D4
@@ -226,25 +249,4 @@ void loop() {
     tone(buzzer,349,125);//F4
     delay(125);
     tone(buzzer,392,125);//G4
-  
-  for (int i = 0; i < 5; i++) {
-    digitalWrite(leds[i], HIGH); 
-    tone(buzzer, notas[i]);      
-    delay(duracion);
-
-    digitalWrite(leds[i], LOW);  
-    noTone(buzzer);              
-    delay(100);
-  }
-
-  
-  for (int i = 4; i >= 0; i--) {
-    digitalWrite(leds[i], HIGH);
-    tone(buzzer, notas[i]);
-    delay(duracion);
-
-    digitalWrite(leds[i], LOW);
-    noTone(buzzer);
-    delay(100);
-  }
 }
