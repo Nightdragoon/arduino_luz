@@ -90,6 +90,9 @@
 #define NOTE_D8 4699
 #define NOTE_DS8 4978
 
+int buttonPin = 2;
+int read = 0;
+
 
 int leds[] = {5, 6, 7, 8, 9};
 
@@ -108,7 +111,7 @@ int notas[] = {
 int duracion = 600; 
 
 void setup() {
-  
+  pinMode(buttonPin , INPUT);
   for (int i = 0; i < 5; i++) {
     pinMode(leds[i], OUTPUT);
   }
@@ -118,9 +121,9 @@ void setup() {
 }
 
 void loop() {
-
-  
-  for (int i = 0; i < 5; i++) {
+  read = digitalRead(buttonPin);
+  if(read){
+    for (int i = 0; i < 5; i++) {
     digitalWrite(leds[i], HIGH); 
     tone(buzzer, notas[i]);      
     delay(duracion);
@@ -141,112 +144,280 @@ void loop() {
     delay(100);
   }
 
-  
+  //musica megalovania
+  int rLed; // variable para el led random (solo agregado aqui)
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D4,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D4,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D5,250);//D5
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_A4,250);//A4
     delay(375);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_GS4,125);//Ab4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_G4,250);//G4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_F4,250);//F4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D4,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_F4,125);//F4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_G4,125);//G4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_C4,125);//C4(middle)     
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_C4,125);//C4(middle)     
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_C4,125);//C4(middle)     
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_C4,125);//C4(middle)     
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D5,250);//D5
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_A4,375);//A4
     delay(375);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_GS4,125);//Ab4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_G4,250);//G4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_F4,250);//F4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_D4,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_F4,125);//F4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,NOTE_G4,125);//G4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,247,125);//B3
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,247,125);//B3
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,587,250);//D5
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,440,375);//A4
     delay(375);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,415,125);//Ab4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,250);//G4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,250);//F4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,294,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,125);//F4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,125);//G4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,233,62);//Bb3
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,233,62);//Bb3
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,233,62);//Bb3
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,233,62);//Bb3
     delay(62);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,587,250);//D5
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,440,375);//A4
     delay(375);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,415,125);//Ab4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,250);//G4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,250);//F4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,294,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,125);//F4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,125);//G4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,294,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,294,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,587,250);//D5
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,440,375);//A4
     delay(375);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,415,125);//Ab4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,250);//G4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,250);//F4
     delay(250);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,294,125);//D4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,349,125);//F4
     delay(125);
+    digitalWrite(leds[rLed], LOW);
+
+    rLed = random(0,5); digitalWrite(leds[rLed], HIGH);
     tone(buzzer,392,125);//G4
+    delay(125);
+    digitalWrite(leds[rLed], LOW);
+  }
+
+  
+  
 }
